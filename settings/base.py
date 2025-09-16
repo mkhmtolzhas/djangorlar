@@ -1,13 +1,15 @@
 import os
 
+from settings.conf import *  # noqa
+
 # ----------------------------------------------------------------
 # Path
 #
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-WSGI_APPLICATION = "djangorlar.wsgi.application"
-ROOT_URLCONF = "djangorlar.urls"
+WSGI_APPLICATION = "settings.wsgi.application"
+ROOT_URLCONF = "settings.urls"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
@@ -70,7 +72,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # ----------------------------------------------------------------
-# Internationalization 
+# Internationalization
 #
 
 LANGUAGE_CODE = "en-us"
@@ -79,21 +81,4 @@ USE_I18N = True
 USE_TZ = True
 
 
-
-
-
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
-    }
-}
-
 SECRET_KEY = "django-insecure-bqt7^m_m908t-xnc6!gh(bn&indw#)9sr!@3m&(#yn*_-sz03c"
-
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-

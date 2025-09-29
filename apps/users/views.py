@@ -8,4 +8,4 @@ users = [
 
 
 def user_list(request):
-    return render(request, 'user_list.html', {'users': users})
+    return render(request, 'users.html', {'users': users})

@@ -25,7 +25,11 @@ DJANGO_AND_THIRD_PARTY_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    "apps.welcome",
+    "apps.users",
+    "apps.city_time",
+]
 INSTALLED_APPS = PROJECT_APPS + DJANGO_AND_THIRD_PARTY_APPS
 
 
@@ -44,7 +48,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

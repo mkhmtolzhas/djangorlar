@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>City Time Display</h1>
+    <label for="city">Enter City Name:</label>
+    <input type="text" id="city" name="city">
+    <button onclick="fetchTime()">Get Time</button>
+    <p id="timeDisplay"></p>
+
+    <script>
+        async function fetchTime() {
+            const city = document.getElementById('city').value;
+            const response = await fetch(`http://worldtimeapi.org/api/timezone/${city}`);
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('timeDisplay').innerText = `Current time in ${city}: ${data.datetime}`;
+            } else {
+                document.getElementById('timeDisplay').innerText = 'City not found or invalid timezone.';
+            }
+        }
+    </script>
+</body>
+</html>
